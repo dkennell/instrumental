@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402221242) do
+ActiveRecord::Schema.define(version: 20170403194941) do
+
+  create_table "instruments", force: :cascade do |t|
+    t.integer  "rental_id"
+    t.string   "type"
+    t.boolean  "accessories"
+    t.string   "instrument_model"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "rentals", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "monthly_price"
+    t.boolean  "insurance"
+    t.boolean  "rent_to_own"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
