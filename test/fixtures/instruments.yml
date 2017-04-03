@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rental_id: 1
+  type: 
+  accessories: false
+  instrument_model: MyString
+
+two:
+  rental_id: 1
+  type: 
+  accessories: false
+  instrument_model: MyString
