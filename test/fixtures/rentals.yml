@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  monthly_price: 1
+  insurance: false
+  rent_to_own: false
+
+two:
+  user_id: 1
+  monthly_price: 1
+  insurance: false
+  rent_to_own: false
