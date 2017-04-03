@@ -5,26 +5,48 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-10.times.do
-  User.create(
-  	email: 
-  	password:
-  	)
+10.times do
+	User.create(
+		name: Faker::Name.name,
+		email: Faker::Internet.email,
+		password: Faker::Internet.password
+	    )
+end
 
-10.times.do
+user_ids = User.all.map {|u|u.id}
+
+10.times do
   Rental.create(
-  	user_id:
-  	monthly_price:
-  	insurance:
-  	rent_to_own:
+  	user_id: user_ids.sample,
+  	monthly_price: Faker::Number.number(4),
+  	insurance: [true, false].sample,
+  	rent_to_own: [true, false].sample
   	)
 end
 
-10.times.do
+rental_ids = Rental.all.map {|r|r.id}
+
+instrument_brands = {
+"keyboard" => ["Yamaha PSR-F51", "Casio CTK-1500", "Roland V-Combo", "Korg Pa4X 76"],
+"drumkit" => ["Pearl Export Series", "Tama Silverstar", "Gretsch Catalina Maple", "Odery Eyedentity Series"],
+"acoustic_guitar" => ["Seagull Guitars S6 Original", "Gibson 2016 Hummingbird Vintage", "Fender CD-60" "Taylor GS Mini "],
+"electric_guitar" =>["Fender American Special Stratocaster", "Gibson Les Paul Faded", "Ibanez Paul Stanley Signature"],
+"saxophone" => ["Selmer Mark VI", "Yamaha Custom Z", "Selmer Balanced Action", "Allora Student Series"],
+"flute" => ["Pearl Quantz Series", "Yamaha YFL-221", "Gemeinhardt Model 3OB", "Bentoni C"],
+"clarinet" => ["Etude Student Clarinet Model Ecl-100", "Buffet Crampon R13", "Yamaha Ycl-650", "Lazarro 50-BK"],
+"cello" => ["Cecilio CCO-500", "Cremona SC-200", "Merano’s Basic CL100-MP", "Yamaha SVC-110SK"],
+"violin" => ["Stentor 1500", "Cremona SV-500", "Mendini MV500", "Johannes Kohr K500"],
+"trumpet" => ["Allora Aatr-125 Series Classic", "Yamaha Ytr8335 Xeno", "Bach 180S Custom Stradivarius", "Bundy Btr-300 Series"],
+"trumbone" => ["Allora Student Series", "Yamaha Ysl620 Professional", "Kanstul 1555", "Cerveny Vfc-Sl6673R Series F"],
+"french_horn" => ["Hans Hoyer 802", "Holton H179", "Yamaha YHR-871D Custom", "Wenzelmeinl Model 205gs"]
+}
+10.times do
+	instrument_type = instrument_brands.keys.sample
+
   Instrument.create(
-  	rental_id:
-  	type:
-  	accessories:
-  	model: 
+  	rental_id: rental_ids.sample,
+  	instrument_type: instrument_type,
+  	accessories: [true, false].sample,
+  	instrument_model: instrument_brands[instrument_type].sample
   	)
 end

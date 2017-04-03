@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403194941) do
+ActiveRecord::Schema.define(version: 20170403200125) do
 
   create_table "instruments", force: :cascade do |t|
     t.integer  "rental_id"
-    t.string   "type"
+    t.string   "instrument_type"
     t.boolean  "accessories"
     t.string   "instrument_model"
     t.datetime "created_at",       null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170403194941) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
