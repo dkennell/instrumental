@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :rentals
-  resources :instruments
+  
+  resources :rentals do 
+    resources :instruments
+  end
+  
   devise_for :users
+  
   get 'home/index'
 
 root to: "home#index"
