@@ -10,13 +10,15 @@ class RentalsController < ApplicationController
   end
 
   def create
-    if params[:rental][:instrument][:instrument_id].empty?
-    	@instrument = Instrument.create(instrument_type: params[:rental][:instrument][:new_instrument_type], instrument_model: params[:rental][:instrument][:new_instrument_model])
+        binding.pry
+
+    @rental = Rental.create(rental_params)
+    if params[:rental][:instruments_attributes][:instrument_type].empty? || params[:rental][:instruments_attributes][:instrument_model].empty?
+      @instrument = Instrument.find_by(id: params[:rental][:instrument][:instrument_id])
+      @rental.instruments << @instrument
     else
-    	@instrument = Instrument.find_by(id: params[:rental][:instrument][:instrument_id])
+      @rental.instrument_attributes=(params[:rental][:instruments_attributes])
     end
-    @rental = Rental.create(insurance: params[:rental][:insurance], rent_to_own: params[:rental][:rent_to_own], monthly_price: rental_price)
-    @rental.instruments << @instrument
     current_user.rentals << @rental
     redirect_to rentals_path
   end
@@ -25,7 +27,7 @@ class RentalsController < ApplicationController
 private
 
   def rental_params
-  	params.require(:rental).permit
+  	params.require(:rental).permit(:instrument_id :insurance, :rent_to_own, :monthly_price, :instruments_attributes => [:instrument_type, :instrument_model])
   end
 
   def rental_price
