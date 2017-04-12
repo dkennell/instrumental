@@ -1,0 +1,23 @@
+<h2>New Rental</h2>
+
+<%= form_for @rental do |f| %>
+  <%= f.label :insurance %>
+  <%= f.check_box(:insurance) %><br>
+  <%= f.label(:rent_to_own) %>
+  <%= f.check_box(:rent_to_own) %><br>
+
+<h3>Instrument</h3>
+
+    <%= f.fields_for :instrument do |f| %>
+          <%= f.label "Select an Instrument: " %><br>
+          <%= f.select :instrument_id, Instrument.all.collect {|i| [i.instrument_type + " - " + i.instrument_model, i.id]}, :include_blank => true %><br>
+          <p>Don't see the instrument you want? No problem!</p>
+          <p>Just enter the details of your desired instrument
+          below, and we'll order it for you!</p>
+          <%= f.label :new_instrument_type, "Instrument type (Guitar, Keyboard, etc)"  %><br>
+          <%= f.text_field :new_instrument_type %><br>
+          <%= f.label :new_instrument_model, "Instrument Model"  %><br>
+          <%= f.text_field :new_instrument_model%><br>
+          <%= f.submit "Rent" %>
+    <% end %>
+<% end %>

@@ -1,0 +1,11 @@
+<h3>Add New Instrument to Rental</h3>
+
+    <%= form_for @instrument, url: {action: "create", params: {id: @rental.id}} do |f| %>
+          <p>Just enter the details of your desired instrument
+          below, and we'll order it for you!</p>
+          <%= f.label :instrument_type, "Instrument type (Guitar, Keyboard, etc)"  %><br>
+          <%= f.text_field :instrument_type %><br>
+          <%= f.label :instrument_model, "Instrument Model"  %><br>
+          <%= f.text_field :instrument_model%><br>
+          <%= f.submit "Add Instrument" %>
+    <% end %>

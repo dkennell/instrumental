@@ -1,2 +1,22 @@
-<h3>All Instruments</h3>
+<% if @rental.nil? %>
+  <h3>All Instruments</h3>
+<% else %>
+  <h3>Rental Details:</h3>
+  Started: <%= @rental.created_at.strftime("%A, %d %b %Y at %l:%M %p") %><br>
+  $<%= @rental.monthly_price%> / month<br>
+  Insured: <% if @rental.insurance %>
+  Yes
+  <% else %>
+  No
+  <% end %>
+  <br> 
+  Renting to Own: <% if @rental.rent_to_own %>
+  Yes
+  <% else %>
+  No
+  <% end %>
+  <br><br>
+  <h3>Rental Instruments:</h3>
+  <%= link_to "(Add an Instrument)", new_rental_instrument_path(@rental.id) %><br><br>
+  <% end %> 
 <%= render @instruments %>

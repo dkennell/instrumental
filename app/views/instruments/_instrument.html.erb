@@ -1,3 +1,8 @@
-<%= instrument.instrument_type.capitalize %><br>
+<% if !!@rental %>
+  <%end%>
+
+<b><%= instrument.instrument_type %><br></b>
 <%= instrument.instrument_model %><br>
-<%= button_to "Rent Instrument", "#" %><br><br>
+<% if @rental.nil? %>
+  <%= button_to "Rent Instrument", new_rental_path, method: 'get' %><br><br>
+<% end %>

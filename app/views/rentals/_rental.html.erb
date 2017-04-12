@@ -1,0 +1,7 @@
+<%= link_to rental.created_at.strftime("%A, %d %b %Y at %l:%M %p"), rental_instruments_path(rental) %><br>
+
+<% rental.instruments.each do |instrument| %>
+  <b><%= instrument.instrument_type %><br></b>
+  <%= instrument.instrument_model %><br><br>
+<% end %>
+Total cost: $<%= rental.monthly_price %> / month <br><br> 

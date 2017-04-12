@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :rentals do 
     resources :instruments
   end
+
+  get "/instruments", to: "instruments#index"
   
   devise_for :users
   
