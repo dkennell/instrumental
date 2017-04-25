@@ -8,14 +8,29 @@
 
 <h3>Instrument</h3>
 
-    <%= f.fields_for :instruments_attributes do |f| %>
-          <p>Don't see the instrument you want? No problem!</p>
+
+    <%= f.fields_for :instrument_attributes do |f| %>
           <p>Just enter the details of your desired instrument
           below, and we'll order it for you!</p>
-          <%= f.label :instrument_type, "Instrument type (Guitar, Keyboard, etc)"  %><br>
-          <%= f.text_field :instrument_type %><br>
-          <%= f.label :instrument_model, "Instrument Model"  %><br>
+
+          <% if params["format"] %>
+          <% @instrument = Instrument.find_by(id: params["format"]) %>
+
+          <%= f.label :instrument_type, "Instrument type (Guitar, Keyboard, etc)"%><br>
+          <%= f.text_field :instrument_type, :value => @instrument.instrument_type%><br>
+          <%= f.label :instrument_model, "Instrument Model"%><br>
+          <%= f.text_field :instrument_model, :value => @instrument.instrument_model%><br>
+
+          <% else %>
+
+          <%= f.label :instrument_type, "Instrument type (Guitar, Keyboard, etc)"%><br>
+          <%= f.text_field :instrument_type%><br>
+          <%= f.label :instrument_model, "Instrument Model"%><br>
           <%= f.text_field :instrument_model%><br>
-          <%= f.submit "Rent" %>
+
     <% end %>
+
+
+          <%= f.submit "Rent" %>
+<% end %>
 <% end %>

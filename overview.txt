@@ -1,0 +1,44 @@
+Instrumental Technical Overview
+-------------------------------
+
+3 models - User, Rental, and Instrument
+
+Nav bar has 8 links:
+Home || Log In || Sign Up || Log Out || Rent || Your Rentals || Instruments || Renter Spotlight
+
+Rent
+-----
+url : /rentals/new
+ - Includes a form for a new rental and a nested form to create
+ an instrument as well
+
+Your Rentals
+-------------
+url: /rentals
+ - Shows an index of rentals w/ instruments
+ - Clicking a rental reveals:
+   url:/rentals/:id/instruments
+     - This shows some more detail of the rental as well as
+       the list of instruments that we saw before, as well
+       as a link to add a new instrument:
+       - url:/rentals/:id/instruments/new
+         - A form for an instrument that gets added to the
+           rental
+
+Concerns
+--------
+Every time the user creates a new rental, s/he also creates
+a new instrument. This may be unrealistic, but I needed to 
+fill the 'nested form' requirement. Attempts to include both
+a select field AND the option to create a new instrument 
+instead quickly became too complex. Is this setup okay?
+
+Is it okay that I don't have user nested resources in the
+project? Does having my rental nested resource fill the 
+nested resource requirement?
+
+The nested rentals/:id/instruments index functions more like
+a rental show page, but that's really just for user satisfaction;
+I can't think of a time when a user would want just a list
+of instruments without other stuff about the rental. Is this
+okay?

@@ -1,7 +1,9 @@
 class Rental < ActiveRecord::Base
 	has_many :instruments
-	accepts_nested_attributes_for :instruments
+	validates :instruments, presence: true
 
-
+  def instrument_attributes=(instrument_attributes)
+      self.instruments.build(instrument_attributes)
+  end
 
 end

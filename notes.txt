@@ -1,0 +1,31 @@
+=====================
+Instrumental Notes  =
+=====================
+
+Project Status
+---------------
+  ==Overall Strategy
+    - Find out who my instructor is for this project
+    - Write up an overview of what we expect to be a
+    passable website. Include a section of concerns,
+    questions, contradictions in the rubric, etc.
+    Once we know who the instructor is, send that shit.
+    - Once message is sent, begin work, using current
+    strategy.
+    - Harrass instructor, send a message every other
+    day. 
+  ==Not Done Yet
+    - Record video of work
+    - Validations
+    - Renter Spotlight (must use scope method)
+    - Facebook login
+    - Make instruments disappear from index when rented
+  ==Debugs
+    - Make sure that instruments that are currently being 
+    rented cannot be removed from a rental by another user
+    selecting the same instrument from the instrument list
+    - Redirect non-logged in users to login if they attempt
+    to do anything else. Otherwise, we get errors in browser.
+  ==Notes To Self
+    - The app shines once you click the links on the /rentals
+    page. This might fill some nested url requirements.

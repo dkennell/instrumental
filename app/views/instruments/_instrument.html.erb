@@ -4,5 +4,5 @@
 <b><%= instrument.instrument_type %><br></b>
 <%= instrument.instrument_model %><br>
 <% if @rental.nil? %>
-  <%= button_to "Rent Instrument", new_rental_path, method: 'get' %><br><br>
+  <%= button_to "Rent Instrument", new_rental_path(instrument.id), method: 'get' %><br><br>
 <% end %>
