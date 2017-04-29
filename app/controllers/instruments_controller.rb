@@ -19,12 +19,18 @@ def new
 end
 
 def create
-  @rental = Rental.find_by(id: params[:rental_id])
   @instrument = Instrument.create(instrument_params)
+
+  if @instrument.invalid?
+    redirect_to :back, :flash => {:error => @instrument.errors.full_messages}
+  else
+
+  @rental = Rental.find_by(id: params[:rental_id])
   @rental.instruments << @instrument
   @rental.monthly_price += 40
   @rental.save
   redirect_to rentals_path
+  end
 end
 
 private

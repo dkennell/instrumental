@@ -11,12 +11,16 @@ class RentalsController < ApplicationController
 
   def create
     @rental = Rental.new(rental_params)
-      if @rental.save
+    
+      if @rental.instruments.first.invalid?
+          redirect_to new_rental_path, :flash => {:error => @rental.instruments.first.errors.full_messages}
+      else
+
+    
+        @rental.save
           @rental.monthly_price = rental_price
           current_user.rentals << @rental
         redirect_to rentals_path
-      else
-        render :new
       end
   end
 

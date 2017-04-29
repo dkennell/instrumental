@@ -16,7 +16,6 @@ Project Status
     day. 
   ==Not Done Yet
     - Record video of work
-    - Validations
     - Renter Spotlight (must use scope method)
     - Facebook login
     - Make instruments disappear from index when rented

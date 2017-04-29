@@ -1,3 +1,5 @@
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-Testing messages<br>
+       <% if flash[:error] %>
+         <p class="error"><%= safe_join(flash[:error], "<br>".html_safe) %></p>
+       <% end %>
