@@ -23,8 +23,6 @@ Project Status
     - Make sure that instruments that are currently being 
     rented cannot be removed from a rental by another user
     selecting the same instrument from the instrument list
-    - Redirect non-logged in users to login if they attempt
-    to do anything else. Otherwise, we get errors in browser.
   ==Notes To Self
     - The app shines once you click the links on the /rentals
     page. This might fill some nested url requirements.

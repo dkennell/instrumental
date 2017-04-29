@@ -58,6 +58,9 @@ GEM
       responders
       warden (~> 1.2.3)
     dotenv (2.2.0)
+    dotenv-rails (2.2.0)
+      dotenv (= 2.2.0)
+      railties (>= 3.2, < 5.1)
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.7.3)
@@ -189,6 +192,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   dotenv
+  dotenv-rails
   faker
   jbuilder (~> 2.0)
   jquery-rails
@@ -204,4 +208,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
