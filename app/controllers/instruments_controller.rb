@@ -3,7 +3,7 @@ class InstrumentsController < ApplicationController
   def index
   	if params[:rental_id]
   		@rental = Rental.find_by(id: params[:rental_id])
-  		@instruments = Instrument.available
+  		@instruments = @rental.instruments
   	else
  	    @instruments = Instrument.available
     end

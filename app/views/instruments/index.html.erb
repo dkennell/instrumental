@@ -4,13 +4,13 @@
   <h3>Rental Details:</h3>
   Started: <%= @rental.created_at.strftime("%A, %d %b %Y at %l:%M %p") %><br>
   $<%= @rental.monthly_price%> / month<br>
-  Insured: <% if @rental.insurance %>
+  Insured (+$10/mo) : <% if @rental.insurance %>
   Yes
   <% else %>
   No
   <% end %>
   <br> 
-  Renting to Own: <% if @rental.rent_to_own %>
+  Renting to Own (+$10/mo) : <% if @rental.rent_to_own %>
   Yes
   <% else %>
   No

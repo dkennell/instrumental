@@ -46,7 +46,6 @@ instrument_brands = {
   Instrument.create(
   	rental_id: rental_ids.sample,
   	instrument_type: instrument_type,
-  	accessories: [true, false].sample,
   	instrument_model: instrument_brands[instrument_type].sample
   	)
 end

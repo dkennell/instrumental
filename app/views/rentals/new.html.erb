@@ -12,6 +12,8 @@
     <%= f.fields_for :instrument_attributes do |f| %>
           <p>Just enter the details of your desired instrument
           below, and we'll order it for you!</p>
+          <p>Not sure what you're looking for?
+          Take a look at what we have <%= link_to "in stock", instruments_path %>.</p>
 
           <% if params["format"] %>
             <% @instrument = Instrument.find_by(id: params["format"]) %>

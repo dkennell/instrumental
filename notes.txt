@@ -1,26 +1,14 @@
-=====================
-Instrumental Notes  =
-=====================
+=================================
+Instrumental Development Notes  =
+=================================
 
 Project Status
 ---------------
   ==Overall Strategy
-    - Find out who my instructor is for this project
-    - Write up an overview of what we expect to be a
-    passable website. Include a section of concerns,
-    questions, contradictions in the rubric, etc.
-    Once we know who the instructor is, send that shit.
-    - Once message is sent, begin work, using current
-    strategy.
-    - Harrass instructor, send a message every other
-    day. 
+    - Check rubric
+    - If all done, start submission process
   ==Not Done Yet
-    - Add link from new rental page to instrument index
+    - ALL DONE!
   ==Debugs
-    - Make sure that instruments that are currently being 
-    rented cannot be removed from a rental by another user
-    selecting the same instrument from the instrument list
-    - It seems that some rentals might be gettting created
-    without a user id, and this can lead to issues with the 'featured user' section.
-    - Get rid of "accessories" attribute for instruments
+    - ALL DONE!
   ==Notes To Self

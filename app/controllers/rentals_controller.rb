@@ -10,10 +10,10 @@ class RentalsController < ApplicationController
   end
 
   def create
-    @instrument = Instrument.find_by({:instrument_type => rental_params["instrument_attributes"]["instrument_type"], :instrument_model => rental_params["instrument_attributes"]["instrument_model"], :rental_id => nil})
-    @rental = Rental.new(:insurance => rental_params[:insurance], :rent_to_own => rental_params[:rent_to_own])
-    @rental.instruments << @instrument
-
+    if  @instrument = Instrument.find_by({:instrument_type => rental_params["instrument_attributes"]["instrument_type"], :instrument_model => rental_params["instrument_attributes"]["instrument_model"], :rental_id => nil})
+      @rental = Rental.new(:insurance => rental_params[:insurance], :rent_to_own => rental_params[:rent_to_own])
+      @rental.instruments << @instrument
+    end
     @rental ||= Rental.new(rental_params)
     
       if @rental.instruments.first.invalid?
