@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  get 'home/newest_renter' => "home#newest_renter"
   
   get 'home/index'
 

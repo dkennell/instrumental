@@ -15,14 +15,9 @@ Project Status
     - Harrass instructor, send a message every other
     day. 
   ==Not Done Yet
-    - Record video of work
-    - Renter Spotlight (must use scope method)
-    - Facebook login
     - Make instruments disappear from index when rented
   ==Debugs
     - Make sure that instruments that are currently being 
     rented cannot be removed from a rental by another user
     selecting the same instrument from the instrument list
   ==Notes To Self
-    - The app shines once you click the links on the /rentals
-    page. This might fill some nested url requirements.

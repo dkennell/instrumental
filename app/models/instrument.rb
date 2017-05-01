@@ -3,4 +3,9 @@ class Instrument < ActiveRecord::Base
   
   validates :instrument_type, presence: true
   validates :instrument_model, presence: true
+
+  def self.available
+    where("rental_id = NULL")
+  end
+  
 end
