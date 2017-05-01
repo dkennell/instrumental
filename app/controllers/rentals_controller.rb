@@ -10,16 +10,18 @@ class RentalsController < ApplicationController
   end
 
   def create
-    @rental = Rental.new(rental_params)
+    @instrument = Instrument.find_by({:instrument_type => rental_params["instrument_attributes"]["instrument_type"], :instrument_model => rental_params["instrument_attributes"]["instrument_model"], :rental_id => nil})
+    @rental = Rental.new(:insurance => rental_params[:insurance], :rent_to_own => rental_params[:rent_to_own])
+    @rental.instruments << @instrument
+
+    @rental ||= Rental.new(rental_params)
     
       if @rental.instruments.first.invalid?
           redirect_to new_rental_path, :flash => {:error => @rental.instruments.first.errors.full_messages}
-      else
-
-    
+      else 
         @rental.save
-          @rental.monthly_price = rental_price
-          current_user.rentals << @rental
+        @rental.monthly_price = rental_price
+        current_user.rentals << @rental
         redirect_to rentals_path
       end
   end

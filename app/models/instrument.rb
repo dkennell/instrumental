@@ -5,7 +5,7 @@ class Instrument < ActiveRecord::Base
   validates :instrument_model, presence: true
 
   def self.available
-    where("rental_id = NULL")
+    where(:rental_id => nil)
   end
   
 end

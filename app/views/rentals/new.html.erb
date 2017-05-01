@@ -14,23 +14,22 @@
           below, and we'll order it for you!</p>
 
           <% if params["format"] %>
-          <% @instrument = Instrument.find_by(id: params["format"]) %>
+            <% @instrument = Instrument.find_by(id: params["format"]) %>
 
-          <%= f.label :instrument_type, "Instrument type (Guitar, Keyboard, etc)"%><br>
-          <%= f.text_field :instrument_type, :value => @instrument.instrument_type%><br>
-          <%= f.label :instrument_model, "Instrument Model"%><br>
-          <%= f.text_field :instrument_model, :value => @instrument.instrument_model%><br>
+            <%= f.label :instrument_type, "Instrument type (Guitar, Keyboard, etc)"%><br>
+            <%= f.text_field :instrument_type, :value => @instrument.instrument_type%><br>
+            <%= f.label :instrument_model, "Instrument Model"%><br>
+            <%= f.text_field :instrument_model, :value => @instrument.instrument_model%><br>
 
           <% else %>
 
-          <%= f.label :instrument_type, "Instrument type (Guitar, Keyboard, etc)"%><br>
-          <%= f.text_field :instrument_type%><br>
-          <%= f.label :instrument_model, "Instrument Model"%><br>
-          <%= f.text_field :instrument_model%><br>
+            <%= f.label :instrument_type, "Instrument type (Guitar, Keyboard, etc)"%><br>
+            <%= f.text_field :instrument_type%><br>
+            <%= f.label :instrument_model, "Instrument Model"%><br>
+            <%= f.text_field :instrument_model%><br>
 
-    <% end %>
-
+          <% end %>
 
           <%= f.submit "Rent" %>
-<% end %>
+    <% end %>
 <% end %>

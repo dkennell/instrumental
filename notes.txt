@@ -15,9 +15,12 @@ Project Status
     - Harrass instructor, send a message every other
     day. 
   ==Not Done Yet
-    - Make instruments disappear from index when rented
+    - Add link from new rental page to instrument index
   ==Debugs
     - Make sure that instruments that are currently being 
     rented cannot be removed from a rental by another user
     selecting the same instrument from the instrument list
+    - It seems that some rentals might be gettting created
+    without a user id, and this can lead to issues with the 'featured user' section.
+    - Get rid of "accessories" attribute for instruments
   ==Notes To Self
