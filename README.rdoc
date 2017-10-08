@@ -1,28 +1,36 @@
-== README
+# Instrumental
+## Description
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app for musical instrument shop owners to keep track of rental agreements.
 
-Things you may want to cover:
+## Installation 
 
-* Ruby version
+ - Clone the repo
+ - bundle install
+ - rake db:migrate
+ - rake db:seed
+ - rails s 
+ - You're all set! Point your browser at localhost:3000 to play with
+ Instrumental!
 
-* System dependencies
+## Things to do in Instrumental
 
-* Configuration
+- Sign up as a new user
+- Oooh, or try signing up with Facebook!
+- Create a new rental of a specific intrument you want
+- OR, take a look at the list of instruments that are already available!
+- Did you just rent an instrument? You're probably being featured in the Renter Spotlight! Wow!
 
-* Database creation
+## Contributing to Instrumental
 
-* Database initialization
+See something on Instrumental you think could be improved?
+Feel free to fork the app and send us a pull 
+request. The repo is up at:
+`https://github.com/dkennell/geohunter_2`.
+Thanks for your help!
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Thanks for using Geohunter!
