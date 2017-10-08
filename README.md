@@ -26,7 +26,7 @@ This is an app for musical instrument shop owners to keep track of rental agreem
 See something on Instrumental you think could be improved?
 Feel free to fork the app and send us a pull 
 request. The repo is up at:
-`https://github.com/dkennell/geohunter_2`.
+`https://github.com/dkennell/instrumental`.
 Thanks for your help!
 
 ## License
